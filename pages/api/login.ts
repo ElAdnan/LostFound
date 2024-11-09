@@ -1,6 +1,7 @@
 import type {NextApiRequest, NextApiResponse} from 'next'
 import {auth} from "@/app/config/firebase";
 import {signInWithEmailAndPassword, User} from "firebase/auth";
+import login from "@/app/services/login";
 
 const handler = async (
     req: NextApiRequest,
@@ -14,11 +15,9 @@ const handler = async (
         return
     }
 
-
-    signInWithEmailAndPassword(auth, email as string, password as string)
-        .then((userCredential) => {
+    login(email as string, password as string)
+        .then((user) => {
             // Signed in
-            const user: User = userCredential.user;
             res.status(200).json(user)
 
         })
