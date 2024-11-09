@@ -32,6 +32,11 @@ export default function Home() {
         <h2 className="heading !text-white">How we can help you</h2>
         <h2 className="sub-heading !text-white">We can help you find your lost items and also help you declare items you have found</h2>
         <div className="w-1/3">
+        {/* icon with text and description */}
+        </div>
+        <div className="w-1/3">
+        </div>
+        <div className="w-1/3">
         </div>
       </div>  
 
